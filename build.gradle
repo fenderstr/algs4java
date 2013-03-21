@@ -1,0 +1,5 @@
+apply plugin: 'java'
+
+dependencies {
+    build files('./libs/stdlib.jar')
+}
