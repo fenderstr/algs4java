@@ -1,5 +1,5 @@
 apply plugin: 'java'
 
 dependencies {
-    build files('./libs/stdlib.jar')
+    compile fileTree(dir: 'libs', include: '*.jar')
 }
