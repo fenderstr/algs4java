@@ -1,5 +1,29 @@
 apply plugin: 'java'
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+def langLevel = 1.7
+sourceCompatibility = langLevel
+targetCompatibility = langLevel
+
+group = 'org.book.example'
+version = '0.1'
+
+idea {
+	project {
+		jdkName = langLevel
+		languageLevel = langLevel
+	}
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	maven { url 'http://oss.sonatype.org/content/repositories/snapshots/' }
+}
 
 dependencies {
-    compile fileTree(dir: 'libs', include: '*.jar')
+	compile fileTree(dir: 'libs', include: '*.jar')
+	groovy 'org.codehaus.groovy:groovy-all:2.0.1'
+	testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
 }
